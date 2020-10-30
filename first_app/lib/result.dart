@@ -9,13 +9,13 @@ class Result extends StatelessWidget {
   String get resultPhrase {
     var resultText = 'You did it';
 
-    if (this.resultScore <= 8 ) {
+    if (this.resultScore <= 8) {
       resultText = 'You are likeable!';
-      } else if (this.resultScore <= 16) {
-        resultText = 'You are .. strange';
-        } else {
-          resultText = 'You are so bad';
-        };
+    } else if (this.resultScore <= 16) {
+      resultText = 'You are .. strange';
+    } else {
+      resultText = 'You are so bad';
+    }
 
     return resultText;
   }
@@ -23,23 +23,18 @@ class Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column (
-        children: [
-          Text(
-            this.resultPhrase,
-            style: TextStyle(
-              fontSize: 36,
-              fontWeight: FontWeight.bold
-            ), //TextStyle
-            textAlign: TextAlign.center,
-          ),
-          FlatButton(
+      child: Column(children: [
+        Text(
+          this.resultPhrase,
+          style:
+              TextStyle(fontSize: 36, fontWeight: FontWeight.bold), //TextStyle
+          textAlign: TextAlign.center,
+        ),
+        FlatButton(
             child: Text('Restart Quiz!'),
             textColor: Colors.blue,
-            onPressed: this.resetHandler
-          )
-        ]
-      ), //Text
+            onPressed: this.resetHandler)
+      ]), //Text
     ); //Center
   }
 }
